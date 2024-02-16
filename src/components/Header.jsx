@@ -1,13 +1,31 @@
-import React from 'react';
-import '../components/Header.css'
+import React, { useState } from 'react';
+// import '../components/Header.css'
+import {Button, Table} from 'react-bootstrap';
+
 const Header = () => {
+  
+  const [color, setColor] =  useState("Green");
+  const [count, setCount] =  useState(0);
+  const changeColor = () =>{
+    setColor("Red");
+  }
+  const increment = () =>{
+    setCount(count + 1)
+  }
+  const decrement = () =>{
+    setCount(count - 1);
+  }
+
   return (
-    <div className='div-header'>
-        <h1 className='header'>
-            Component 1
-        </h1>
-        <p className='para'>This is a paragraph</p>
-    </div>
+    <>
+    <h1 className="bg-warning text-white">useState Hook in</h1>
+    <h2>my Favourite color is {color}</h2>
+    <Button onClick={changeColor}>Change Color</Button>
+    <h1>Counter is {count}</h1>
+    <Button className='m-2 bg-success' onClick={increment}> + </Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <Button className='m-2 bg-danger' onClick={decrement}> - </Button>
+
+    </>
   )
 }
 
