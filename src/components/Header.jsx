@@ -15,6 +15,9 @@ const Header = () => {
   const decrement = () =>{
     setCount(count - 1);
   }
+  const onCHangeHandler =() => {
+    alert('sadfghjkl')
+  }
 
   return (
     <>
@@ -22,6 +25,7 @@ const Header = () => {
     <h2>my Favourite color is {color}</h2>
     <Button onClick={changeColor}>Change Color</Button>
     <h1>Counter is {count}</h1>
+    <input onChange={onCHangeHandler} type="text" />
     <Button className='m-2 bg-success' onClick={increment}> + </Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <Button className='m-2 bg-danger' onClick={decrement}> - </Button>
 
